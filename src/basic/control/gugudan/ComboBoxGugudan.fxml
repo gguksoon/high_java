@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="basic.control.gugudan.ComboBoxGugudanController">
+   <children>
+      <HBox prefHeight="0.0" prefWidth="200.0">
+         <children>
+            <ComboBox fx:id="combo" prefHeight="23.0" prefWidth="128.0" />
+            <Button fx:id="btn" mnemonicParsing="false" onAction="#printGugudan" prefHeight="23.0" prefWidth="53.0" text="출력">
+               <HBox.margin>
+                  <Insets left="20.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <TextArea fx:id="ta" prefHeight="200.0" prefWidth="200.0">
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </TextArea>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>

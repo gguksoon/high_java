@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="student">
+	<typeAlias alias="studentVo" type="basic.student.vo.StudentVO"/>
+
+	<insert id="stdInsert" parameterClass="studentVo">
+		insert into mystudent (std_name, std_kor, std_eng, std_mat) 
+		values (
+			#std_name#, #std_kor#, #std_eng#, #std_mat#	
+		)
+	</insert>
+	
+	<select id="getAllStudentList" resultClass="studentVo">
+		select * from mystudent
+	</select>
+	 
+</sqlMap>
+
+
+
+
+
+
+
+
+
+
+

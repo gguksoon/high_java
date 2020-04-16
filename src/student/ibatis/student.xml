@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE sqlMap
+	PUBLIC "-//ibatis.apache.org/DTD SQL Map 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="student">
+	  
+	<insert id="insertMember" parameterClass="memVO"> 
+		insert into MYMEMBER (mem_id, mem_name, mem_tel, mem_addr)
+		values( #mem_id#, #mem_name#, #mem_tel#, #mem_addr# )
+	</insert>
+	
+	<update id="updateMember" parameterClass="map"> 
+		update MYMEMBER
+		   set mem_name = #mem_name#, <!-- 데이터가 아닌 컬럼명일땐 $ 사용 -->
+			   mem_tel = #mem_tel#,
+			   mem_addr = #mem_addr#
+		 where mem_id = #mem_id#
+	</update>
+	
+	<update id="updateMember2" parameterClass="memVO"> 
+		update MYMEMBER
+		   set mem_name = #mem_name#, 
+			   mem_tel = #mem_tel#,
+			   mem_addr = #mem_addr#
+		 where mem_id = #mem_id#
+	</update>
+	
+	<!-- delete 연습 -->		<!-- 파라미터에 String 값만 사용하니 string 이용 -->
+	<delete id="deleteMember" parameterClass="string"> 
+		delete from MYMEMBER
+		 <!-- where mem_id = #mem_id# -->
+	     where mem_id = #asdasdwqdqw# <!-- 아래 주석 참고 -->
+	</delete>
+
+	<select id="getMemberAll" resultClass="memVO">
+		select * from MYMEMBER
+	</select>
+	
+	<select id="getMember" parameterClass="String" resultClass="memVO">
+		select * from MYMEMBER where mem_id = #mem_id#
+	</select>
+	  
+</sqlMap>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
