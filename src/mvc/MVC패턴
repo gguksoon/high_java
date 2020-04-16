@@ -1,0 +1,28 @@
+	
+	<< MVC패턴 >>
+	
+- MVC패턴에서 비지니스 로직을 처리하는 클래스들
+	1. VO(≒DTO)   ==> 데이터 저장하는 역할만 하는 클래스
+					  ( VO => Value Object)
+					  (DTO => Data Transfer Object)
+				  ==> DB 테이블에서 1개의 레코드를 저장할 수 있는 클래스를 말한다.
+				
+	2. DAO		  ==> SQL문을 DB서버에 보내서 처리 결과를 얻어오는 역할을 수행하는 클래스
+					  (DAO => Data Access Object)
+					
+    3. Service	  ==> 일을 수행하는 중간 관리자와 같은 역할을 수행하는 클래스
+				  ==> 서비스는 일이 있으면 그 일에 필요한 DAO를 호출해서
+					    처리한 후 처리 결과를 Controller에게 전달한다.
+
+    4. Controller ==> 비지니스 로직이 시작되는 곳으로 사용자가 선택한 일에 대한
+    				    내용을 거기에 맞는 Service에 일을 시키고 Service가 보내온
+    				    처리 결과를 View(화면 등)에 반영시키는 역할을 수행한다.				    
+    				 
+- 작업순서: Controller  -->  Service  -->  DAO  --> VO(DB서버)    
+		             <--           <--       <-- 		 
+					각 단계에서 다른 단계로 이동할 때
+					데이터는 주로 VO나 컬렉션객체에 담아서 보낸다.
+					
+					Service와 Dao는 Model..
+					    				 
+    				    
