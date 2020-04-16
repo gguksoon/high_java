@@ -1,0 +1,15 @@
+	RMI(Remote Method Invocation) 기술
+		==> 원격지에 있는 객체의 메서드를 실행하는 기술
+		
+	RMI에서 메서드를 제공하는 곳에서는 해당 객체의 Interface를 작성해야 한다.
+		==> 이 RMI용 인터페이스는 Remote를 상속해서 작성한다.
+		==> 이 인터페이스에서 선언하는 메서드들은 모두 RemoteException을 throws해야 한다.
+		==> 이 인터페이스를 구현하는 클래스의 생성자도 RemoteException을 throws해야 한다.
+		==> 이 인터페이스를 구현하는 클래스는 UnicastRemotObject를 상속해야 한다.
+		
+	RMI에서 사용되는 데이터객체(예:VO객체)를 작성할 때는 이 클래스가 직렬화(Serializable)가 되도록 작성해야 한다.
+
+
+	** vo를 만들고 Client에 복사붙여넣기 하면 됨.
+	** inf도 만들고 Client에 복사붙여넣기 하면 됨.
+		( 동일해야 함)		
