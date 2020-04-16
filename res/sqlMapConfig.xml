@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- sql의 구조가 저장됨 -->
+<!DOCTYPE sqlMapConfig 
+	PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"
+	"http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+	 <properties resource="sqlMapConfig.properties"/>
+	 
+	 <settings cacheModelsEnabled="true" enhancementEnabled="true"
+	 		lazyLoadingEnabled="true" maxRequests="32" 
+	 		maxSessions="10" maxTransactions="5"
+	 		useStatementNamespaces="true"/>
+	 		
+<!-- <typeAlias alias="memVO" type="basic.MemberVO"/> --> <!-- basic패키지에서 사용했음 -->
+	 <typeAlias alias="memVO2" type="mvc.vo.MemberVO"/> <!-- mvc패키지에 사용했음 -->
+	<typeAlias alias="boardVO" type="board.vo.BoardVO"/>  <!-- board패키지에 사용 -->
+	
+	<transactionManager type="JDBC">
+		<dataSource type="SIMPLE">
+			<property name="JDBC.Driver" value="${driver}"/>
+			<property name="JDBC.ConnectionURL" value="${url}"/>
+			<property name="JDBC.Username" value="${user}"/>
+			<property name="JDBC.Password" value="${pass}"/>
+		</dataSource>
+	</transactionManager>
+	 
+<!-- <sqlMap resource="basic/member.xml"/> --> <!-- basic패키지에서 사용했음 -->
+ <sqlMap resource="mvc/ibatis/mymember.xml"/> <!-- mvc패키지에 사용했음 -->
+<!--  <sqlMap resource="board/ibatis/board.xml"/> --> <!-- board패키지에 사용 -->
+
+
+</sqlMapConfig>
+
+
+
+
+
+
+
+
+
+
+
+
